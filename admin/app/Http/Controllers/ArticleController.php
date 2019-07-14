@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -14,7 +15,19 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+
+        $articles = Article::all();
+        $subjects = Subject::all();
+        function SubjectName($articles){
+        foreach ($articles as $key) {
+        $id =  $key->subject_id;
+        $article = Article::find($id);
+        $subject_name = $article->subject->name;
+        return $subject_name;
+            }
+        }
+        $subjects_name = SubjectName($articles);
+        return view('admin.index', compact('articles', 'subjects', 'subjects_name'));
     }
 
     /**
@@ -24,7 +37,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        $subjects = Subject::all();
+
+        return view('admin.create', compact('subjects'));
+
     }
 
     /**
