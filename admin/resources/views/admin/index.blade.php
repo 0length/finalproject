@@ -4,19 +4,22 @@
 @endsection
 @section('headerlib')
 
-<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="assets/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="assets/plugins/switchery/css/switchery.min.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/plugins/datatables-responsive/css/datatables.responsive.css" rel="stylesheet" type="text/css" media="screen" />
-<link href="pages/css/pages-icons.css" rel="stylesheet" type="text/css">
+<link href="{{ asset('/assets/plugins/pace/pace-theme-flash.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/assets/plugins/font-awesome/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/assets/plugins/jquery-scrollbar/jquery.scrollbar.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ asset('/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ asset('/assets/plugins/switchery/css/switchery.min.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ asset('/assets/plugins/jquery-datatable/media/css/dataTables.bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/assets/plugins/jquery-datatable/extensions/FixedColumns/css/dataTables.fixedColumns.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('/assets/plugins/datatables-responsive/css/datatables.responsive.css') }}" rel="stylesheet" type="text/css" media="screen" />
+<link href="{{ asset('/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
 
 
-<link class="main-stylesheet" href="pages/css/pages.css" rel="stylesheet" type="text/css" />
+<link class="main-stylesheet" href="{{ asset('/pages/css/pages.css') }}" rel="stylesheet" type="text/css" />
+<style>
+.data_table {table-layout: fixed; }
+</style>
 @endsection
 @section('content')
 <div class="page-content-wrapper ">
@@ -81,8 +84,8 @@
 <div class="inner">
 
 <ol class="breadcrumb">
-<li class="breadcrumb-item"><a href="#">Home</a></li>
-<li class="breadcrumb-item active">Data Tables</li>
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active"><a href="/article">Article List</a></li>
 </ol>
 
 <div class="row">
@@ -100,17 +103,18 @@
 
 <div class="card card-transparent">
 <div class="card-header ">
-<div class="card-title">Pages Default Tables Style
+<div class="card-title">Article
 </div>
 <div class="pull-right">
 <div class="col-xs-12">
-<input type="text" id="search-table" class="form-control pull-right" placeholder="Search">
+<a href="/article/create"<button id="show-modal" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> Add Article
+</button></a>
 </div>
 </div>
 <div class="clearfix"></div>
 </div>
 <div class="card-body">
-<table class="table table-hover demo-table-search table-responsive-block" id="tableWithSearch">
+<table class="table table-hover demo-table-search table-responsive-block data_table" id="tableWithSearch">
 <thead>
 <tr>
 <th>Title</th>
@@ -127,13 +131,13 @@
 <td class="v-align-middle semi-bold">
 <p>{{ $item_article->title }}</p>
 </td>
-<td class="v-align-middle"><a href="#" class="btn btn-tag">{{ $subjects_name }}</a>
+<td class="v-align-middle"><a href="#" class="btn btn-tag">{{ $item_article->subject->name }}</a>
 </td>
-<td class="v-align-middle">
-<p>{{ $item_article->text_content }}</p>
+<td class="v-align-middle" >
+        {!! substr( $item_article->text_content ,0,100)."..." !!}
 </td>
  <td class="v-align-middle">
- <img src="{{  $item_article->img_url }}" alt="{{  $item_article->img_url }}">
+ <img src="{{  asset('images').'/'.$item_article->img_url}}" alt="{{  $item_article->img_url }}" style="width : 100%; height: auto;">
 </td>
 <td class="v-align-middle">
 <p> {{ $item_article->published_at }}</p>
@@ -198,8 +202,8 @@
 <div class=" container-fluid  container-fixed-lg footer">
 <div class="copyright sm-text-center">
 <p class="small no-margin pull-left sm-pull-reset">
-<span class="hint-text">Copyright &copy; 2017 </span>
-<span class="font-montserrat">REVOX</span>.
+<span class="hint-text">Copyright &copy; {{ date('Y') }} </span>
+<span class="font-montserrat">README</span>.
 <span class="hint-text">All rights reserved. </span>
 <span class="sm-block"><a href="#" class="m-l-10 m-r-10">Terms of use</a> <span class="muted">|</span> <a href="#" class="m-l-10">Privacy Policy</a></span>
 </p>
@@ -216,38 +220,38 @@ Hand-crafted <span class="hint-text">&amp; made with Love</span>
 
 
 @section('script')
-<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
-<script src="assets/plugins/modernizr.custom.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
-<script src="assets/plugins/popper/umd/popper.min.js" type="text/javascript"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery/jquery-easy.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-ios-list/jquery.ioslist.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-actual/jquery.actual.min.js"></script>
-<script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script type="text/javascript" src="assets/plugins/select2/js/select2.full.min.js"></script>
-<script type="text/javascript" src="assets/plugins/classie/classie.js"></script>
-<script src="assets/plugins/switchery/js/switchery.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js" type="text/javascript"></script>
-<script src="assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js" type="text/javascript"></script>
-<script type="text/javascript" src="assets/plugins/datatables-responsive/js/datatables.responsive.js"></script>
-<script type="text/javascript" src="assets/plugins/datatables-responsive/js/lodash.min.js"></script>
+<script src="{{ asset('/assets/plugins/pace/pace.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery/jquery-3.2.1.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/popper/umd/popper.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery/jquery-easy.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-unveil/jquery.unveil.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-ios-list/jquery.ioslist.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-actual/jquery.actual.min.js') }}"></script>
+<script src="{{ asset('/assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/plugins/select2/js/select2.full.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/plugins/classie/classie.js') }}"></script>
+<script src="{{ asset('/assets/plugins/switchery/js/switchery.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-datatable/media/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-datatable/extensions/TableTools/js/dataTables.tableTools.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-datatable/media/js/dataTables.bootstrap.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/plugins/jquery-datatable/extensions/Bootstrap/jquery-datatable-bootstrap.js') }}" type="text/javascript"></script>
+<script type="text/javascript" src="{{ asset('/assets/plugins/datatables-responsive/js/datatables.responsive.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/assets/plugins/datatables-responsive/js/lodash.min.js') }}"></script>
 
 
 
-<script src="pages/js/pages.js"></script>
+<script src="{{ asset('/pages/js/pages.js') }}"></script>
 
 
-<script src="assets/js/scripts.js" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/scripts.js') }}" type="text/javascript"></script>
 
 
 
-<script src="assets/js/tables.js" type="text/javascript"></script>
-<script src="assets/js/scripts.js" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/tables.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/assets/js/scripts.js') }}" type="text/javascript"></script>
 
 @endsection
 

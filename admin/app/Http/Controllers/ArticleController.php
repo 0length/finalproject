@@ -18,16 +18,15 @@ class ArticleController extends Controller
 
         $articles = Article::all();
         $subjects = Subject::all();
-        function SubjectName($articles){
-        foreach ($articles as $key) {
-        $id =  $key->subject_id;
-        $article = Article::find($id);
-        $subject_name = $article->subject->name;
-        return $subject_name;
-            }
-        }
-        $subjects_name = SubjectName($articles);
-        return view('admin.index', compact('articles', 'subjects', 'subjects_name'));
+
+        // foreach ($articles as $key) {
+        // $id =  $key->subject_id;
+        // $subjects_name = Subject::find($id);
+
+        //     }
+
+
+        return view('admin.index', compact('articles', 'subjects'));
     }
 
     /**
@@ -51,7 +50,25 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images'), $imageName);
+
+          Article::create([
+              'subject_id' => $request->input('subject'),
+              'title' => $request->input('title'),
+              'img_url' => $imageName,
+              'text_content' => $request->post('content'),
+              'published_at' => date('Y-m-d'),
+
+
+          ]);
+          return redirect('/article');
     }
 
     /**

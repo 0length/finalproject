@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->unsignedBigInteger('subject_id')->index();
             $table->string('title', 500);
             $table->string('img_url', 500);
-            $table->string('text_content', 1500);
+            $table->text('text_content');
             $table->date('published_at');
             $table->timestamps();
         });

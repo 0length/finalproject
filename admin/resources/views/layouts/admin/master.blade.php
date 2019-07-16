@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from pages.revox.io/dashboard/4.1.0/html/condensed/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jul 2019 04:29:03 GMT -->
 <head>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8" />
@@ -23,7 +22,7 @@
 
 <body class="fixed-header ">
 
-    @include('layouts.admin.includes.sidebar')
+    {{-- @include('layouts.admin.includes.sidebar') --}}
 
     @include('layouts.admin.includes.header')
 
@@ -37,5 +36,4 @@
     @yield('script')
 </body>
 
-<!-- Mirrored from pages.revox.io/dashboard/4.1.0/html/condensed/datatables.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 12 Jul 2019 04:29:04 GMT -->
 </html>
