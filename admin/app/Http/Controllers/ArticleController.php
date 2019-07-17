@@ -26,7 +26,7 @@ class ArticleController extends Controller
         //     }
 
 
-        return view('admin.index', compact('articles', 'subjects'));
+        return view('admin.articles.index', compact('articles', 'subjects'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ArticleController extends Controller
     {
         $subjects = Subject::all();
 
-        return view('admin.create', compact('subjects'));
+        return view('admin.articles.create', compact('subjects'));
 
     }
 
@@ -88,9 +88,11 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $subjects = Subject::all();
+        return view('admin.articles.edit', compact('article', 'subjects'));
     }
 
     /**

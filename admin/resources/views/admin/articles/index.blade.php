@@ -142,6 +142,9 @@
 <td class="v-align-middle">
 <p> {{ $item_article->published_at }}</p>
 </td>
+<td class="v-align-middle">
+<p><a href="/article/{{ $item_article->id }}/edit">Edit</a></p>
+    </td>
 </tr>
 @endforeach
 </tbody>
