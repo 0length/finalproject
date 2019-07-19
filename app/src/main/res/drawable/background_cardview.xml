@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <gradient android:angle="45" android:startColor="#bc2bff"
+              android:endColor="#bc2bff"
+              android:centerColor="#7249fb"
+              android:centerX="4"
+    />
+    :-moz-linear-gradient(0deg, 0%, 100%)
+</shape>
