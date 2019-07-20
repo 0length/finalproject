@@ -33,8 +33,7 @@ return [
     |
     */
 
-    'connections' => [
-
+    'connections' => 
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -125,6 +124,13 @@ return [
             'cluster' => env('REDIS_CLUSTER', 'predis'),
             'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_').'_database_',
         ],
+        [
+            'laravel-visits' => [
+                'host' => env('REDIS_HOST', '127.0.0.1'),
+                'password' => env('REDIS_PASSWORD', null),
+                'port' => env('REDIS_PORT', 6379),
+                'database' => 3, // anything from 1 to 15, except 0 (or what is set in default)
+            ],
 
         'default' => [
             'host' => env('REDIS_HOST', '127.0.0.1'),
