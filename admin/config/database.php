@@ -33,7 +33,7 @@ return [
     |
     */
 
-    'connections' => 
+    'connections' => [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -117,7 +117,6 @@ return [
     */
 
     'redis' => [
-
         'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
@@ -148,4 +147,6 @@ return [
 
     ],
 
+],
 ];
+

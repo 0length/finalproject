@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Subject;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +55,6 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-
         request()->validate([
 
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -61,10 +65,11 @@ class ArticleController extends Controller
 
           Article::create([
               'subject_id' => $request->input('subject'),
+              'author_id'=> Auth::user()->id,
               'title' => $request->input('title'),
               'img_url' => "https://readme.serveo.net/images/article/".$imageName,
-              'text_content' => $request->post('content'),
-              'published_at' => date('d/m/Y'),
+              'text_content' => $request->content,
+              'published_at' => date('D, d M y'),
 
 
           ]);

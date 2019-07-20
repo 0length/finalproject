@@ -17,16 +17,16 @@ Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 Route::group(['middleware' => 'auth:api'], function(){
 Route::post('details', 'API\UserController@details');
-Route::post('articles', 'API\UserController@articles');
-
 });
 
-// Route::middleware('auth:api')->get('/article', function (Request $request) {
-//     return $request->user();
-// });
-// Route::middleware('auth:api')->get('/subject', 'API\UserController@articles');
+//getList
+Route::get('articles', 'API\DataController@articles');
+Route::get('subjects', 'API\DataController@subjects');
 
-Route::get('articles', 'API\UserController@articles');
-Route::get('articles/{id}', 'API\UserController@articlesid');
-Route::get('subjects', 'API\UserController@subjects');
-Route::get('subjects/{id}', 'API\UserController@subjectsid');
+//getItembyid
+Route::get('articles/{id}', 'API\DataController@articlesid');
+Route::get('subjects/{id}', 'API\DataController@subjectsid');
+
+//increment
+Route::get('articles/visit/{id}', 'API\DataController@countItem');
+Route::post('articles/visit/{id}', 'API\DataController@increItem');
