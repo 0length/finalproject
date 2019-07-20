@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
+    // use HasApiTokens;
     protected $table = "articles";
     protected $fillable = [
         'title', 'text_content', 'published_at', 'subject_id', 'img_url',

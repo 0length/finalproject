@@ -24,7 +24,8 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admin.subjects.create');
     }
 
     /**
@@ -35,7 +36,22 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images/subject'), $imageName);
+          Subject::create([
+              'name' => $request->input('name'),
+              'img_url' => "https://readme.serveo.net/images/subject/".$imageName,
+              'description' => "Description",
+
+
+          ]);
+          return redirect('/article');
     }
 
     /**

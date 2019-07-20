@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @section('title')
-- Admin Dashboard - Writte a Post
+- Admin Dashboard - Insert a Subject
 @endsection
 
 @section('headerlib')
@@ -43,7 +43,7 @@
                     </div>
                     </div>
                     </div>
-<form role="form" action="/article" method="POST"  enctype="multipart/form-data">
+<form role="form" action="/subject" method="POST"  enctype="multipart/form-data">
     {{ csrf_field() }}
                                                     {{ method_field('post') }}
     <div>
@@ -51,28 +51,19 @@
 
                     <div class="pull-right">
                             <div class="col-xs-12">
-
-                            <button type="submit" "show-modal" class="btn btn-primary btn-cons"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Publish
+                            <button type="submit" "show-modal" class="btn btn-primary btn-cons"><i class="fa fa-cloud-upload" aria-hidden="true"></i> Insert
                             </button>
                             </div>
                             </div>
-                    <h5>Writte a New Post</h5>
-
-
+                    <h5>Insert a Subject</h5>
                     <div class="form-group m-b-10">
-                    <input name="title" type="text" placeholder="Title" class="form-control input-lg">
+                    <input name="name" type="text" placeholder="Title" class="form-control input-lg">
                     </div>
 
                     </div>
 
                     <div class="col-md-12">
-                            <div class="form-group form-group-default form-group-default-select2 required">
-                            <label class="">Subject</label>
-                            <select name="subject" class="full-width select2-hidden-accessible" data-placeholder="Select Country" data-init-plugin="select2" tabindex="-1" aria-hidden="true">
-                                @foreach ($subjects as $item_subject)
-                            <option value="{{ $item_subject->id }}">{{ $item_subject->name }}</option>
-                                @endforeach
-
+                            <div class="form-group form-group-default form-group-default-select2 required"></div>
                             </div>
                             </div>
                             <div class="form-group">

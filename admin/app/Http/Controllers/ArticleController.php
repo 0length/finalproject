@@ -57,14 +57,14 @@ class ArticleController extends Controller
 
         ]);
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images'), $imageName);
+        request()->image->move(public_path('images/article'), $imageName);
 
           Article::create([
               'subject_id' => $request->input('subject'),
               'title' => $request->input('title'),
-              'img_url' => $imageName,
+              'img_url' => "https://readme.serveo.net/images/article/".$imageName,
               'text_content' => $request->post('content'),
-              'published_at' => date('Y-m-d'),
+              'published_at' => date('d/m/Y'),
 
 
           ]);
@@ -113,8 +113,12 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Article $article)
+    public function destroy($id)
     {
-        //
+        $article = Article::find($id);
+        $article->delete();
+
+        return redirect('/article');
     }
+
 }

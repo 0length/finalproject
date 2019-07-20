@@ -121,7 +121,8 @@
 <th>Subject</th>
 <th>Artilcle</th>
 <th>Images</th>
-<th>Published</th>
+{{-- <th>Published</th> --}}
+<th>Actions</th>
 </tr>
 </thead>
 <tbody>
@@ -137,14 +138,24 @@
         {!! substr( $item_article->text_content ,0,100)."..." !!}
 </td>
  <td class="v-align-middle">
- <img src="{{  asset('images').'/'.$item_article->img_url}}" alt="{{  $item_article->img_url }}" style="width : 100%; height: auto;">
+ <img src="{{ $item_article->img_url }}" alt="{{  $item_article->img_url }}" style="width : 100%; height: auto;">
 </td>
-<td class="v-align-middle">
+{{-- <td class="v-align-middle">
 <p> {{ $item_article->published_at }}</p>
-</td>
-<td class="v-align-middle">
-<p><a href="/article/{{ $item_article->id }}/edit">Edit</a></p>
-    </td>
+</td> --}}
+    <td class="v-align-middle">
+
+            <div class="btn-group">
+          <a class="btn btn-info text-white btn-sm" href="{{route('article.edit', ['id'=>$item_article->id])}}">Edit</a>
+          <a href="{{route('article.show', ['id' => $item_article->id])}}" class="btn btn-primary btn-sm">Detail</a>
+          <form onsubmit="return confirm('Delete this user student permanently?')" class="d-inline" action="{{route('article.destroy', ['id' => $item_article->id ])}}" method="POST">
+            @csrf
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+          </form>
+        </div>
+
+            </td>
 </tr>
 @endforeach
 </tbody>
@@ -163,8 +174,8 @@
 </div>
 <div class="pull-right">
 <div class="col-xs-12">
-<button id="show-modal" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> Add Subject
-</button>
+<a href="/subject/create"<button id="show-modal" class="btn btn-primary btn-cons"><i class="fa fa-plus"></i> Add Subject
+</button></a>
 </div>
 </div>
 <div class="clearfix"></div>
