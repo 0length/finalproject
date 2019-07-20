@@ -63,34 +63,6 @@ return response()->json(['success'=>$success], $this-> successStatus);
         return response()->json(['success' => $user], $this-> successStatus);
     }
 
-    public function articlesid($id)
-    {
-        $articles = Article::find($id);
-        return response()->json($articles);
-    }
-
-    public function articles()
-    {
-        $articles = Article::all();
-        return response()->json($articles);
-    }
-
-    public function subjectsid($id)
-    {
-
-            $subjects = Subject::find($id);
-            return response()->json($subjects);
-
-
-    }
-
-    public function subjects()
-    {
-
-        $subjects = Subject::all();
-        return response()->json($subjects);
-
-
-    }
+ 
 
 }
