@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 android:id="@+id/activity_main"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="match_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+
+    >
+        <TextView
+                android:id="@+id/brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textAlignment="center"
+                android:layout_marginEnd="50dp"
+                android:layout_marginStart="50dp"
+                android:paddingTop="5dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
+                android:text="Read Me"
+                android:textColor="#fff"
+        />
+
+        <ImageView
+                android:layout_gravity="end"
+                android:layout_marginStart="-30dp"
+                android:layout_toEndOf="@+id/brand"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+        />
+
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            app:navGraph="@navigation/navigation_graph"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_marginTop="34dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="26dp" />
+
+    <eu.long1.spacetablayout.SpaceTabLayout
+            android:id="@+id/spaceTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_behavior="eu.long1.spacetablayout.SpaceTabLayoutBehavior"
+            app:number_of_tabs="three"
+            app:starting_position="one" />
+
+</android.support.design.widget.CoordinatorLayout>
