@@ -103,9 +103,9 @@ public class SpaceTabLayout extends RelativeLayout {
     private int defaultButtonColor;
     private int defaultTabColor;
 
-    private boolean iconOnly = false;
+    private boolean iconOnly = true;
 
-    private boolean SCROLL_STATE_DRAGGING = false;
+    private boolean SCROLL_STATE_DRAGGING = true;
 
     private static final String CURRENT_POSITION_SAVE_STATE = "buttonPosition";
 
@@ -140,7 +140,7 @@ public class SpaceTabLayout extends RelativeLayout {
 
         tabLayout = (TabLayout) findViewById(R.id.spaceTab);
 
-        defaultTabOneButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_one);
+        defaultTabOneButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_home);
         defaultTabTwoButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_two);
         defaultTabThreeButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_three);
         defaultTabFourButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_four);
@@ -161,7 +161,7 @@ public class SpaceTabLayout extends RelativeLayout {
                 numberOfTabs = a.getInt(attr, 3);
                 if (numberOfTabs == 0) {
                     numberOfTabs = 3;
-                    iconOnly = true;
+                    iconOnly = false;
                 }
             } else if (attr == R.styleable.SpaceTabLayout_starting_position) {
                 startingPosition = a.getInt(attr, 0);

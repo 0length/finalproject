@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import com.readme.R
@@ -16,6 +17,11 @@ import kotlinx.android.synthetic.main.activity_detail_article.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import android.widget.LinearLayout
+import android.webkit.WebView
+
+
+
 
 
 class ArticleDetailActivity : AppCompatActivity() {
@@ -36,6 +42,12 @@ class ArticleDetailActivity : AppCompatActivity() {
         }
 
 
+
+
+
+
+
+
     }
 
     private fun getDetailArticle(onlyApi: OnlyApi, id: String) {
@@ -49,8 +61,12 @@ class ArticleDetailActivity : AppCompatActivity() {
                 article = response?.body()!!
                 Log.d("TAG", "Movie size ${article}")
                 collapseToolbar.title = article.getTitle()
+                textView_title.text =  article.getTitle()
+                textView_published.text =  article.getPublishedAt()
                 Picasso.get().load(BaseUrl.baseUrl+article.getImageUrl()).into(imagePoster)
                 text_content.text = article.getTextContent()
+
+
             }
 
         })

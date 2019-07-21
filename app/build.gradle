@@ -68,4 +68,7 @@ dependencies {
     def navVersion = "1.0.0-alpha04"
     implementation "android.arch.navigation:navigation-fragment-ktx:$navVersion"
     implementation "android.arch.navigation:navigation-ui-ktx:$navVersion"
+
+    //Justified TextView
+    implementation 'com.uncopt:android.justified:1.0'
 }

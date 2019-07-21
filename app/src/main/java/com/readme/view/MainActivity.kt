@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         tabLayout.tabOneOnClickListener = View.OnClickListener {
             val snackbar = Snackbar
-                .make(coordinatorLayout, "Welcome to SpaceTabLayout", Snackbar.LENGTH_SHORT)
+                .make(coordinatorLayout, "Welcome to Readme App", Snackbar.LENGTH_SHORT)
 
             snackbar.show()
         }

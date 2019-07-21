@@ -10,6 +10,9 @@ class Articles {
     @SerializedName("subject_id")
     @Expose
     private var subject_id: String? = null
+//    @SerializedName("author_id")
+//    @Expose
+//    private var author_id: String? = null
     @SerializedName("title")
     @Expose
     private var title: String? = null
@@ -37,6 +40,10 @@ class Articles {
 
         return subject_id
     }
+//    fun getAuthorId(): String? {
+//
+//        return author_id
+//    }
 
     fun getTitle(): String? {
         return title

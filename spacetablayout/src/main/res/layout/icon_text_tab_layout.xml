@@ -27,7 +27,7 @@
         android:id="@+id/tabTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Action"
+        android:text=""
         android:textColor="#FFFFFF" />
 
 </LinearLayout>

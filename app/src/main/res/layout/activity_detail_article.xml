@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        android:orientation="vertical"
-        android:paddingHorizontal="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="horizontal"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                  xmlns:app="http://schemas.android.com/apk/res-auto"
                                                  xmlns:tools="http://schemas.android.com/tools"
                                                  android:layout_width="match_parent"
-                                                 android:layout_height="wrap_content"
+                                                 android:layout_height="match_parent"
                                                  tools:context=".view.detail.ArticleDetailActivity">
 
 <android.support.design.widget.AppBarLayout
@@ -24,6 +15,7 @@ android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 <android.support.design.widget.CollapsingToolbarLayout
         android:id="@+id/collapseToolbar"
+        app:expandedTitleTextAppearance="@style/CollapsingToolbarLayoutExpandedTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
@@ -61,18 +53,63 @@ android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
     />
 </android.support.design.widget.CollapsingToolbarLayout>
 
-        <TextView
-                android:id="@+id/text_content"
-                android:textColor="#010"
-                android:textSize="8pt"
-                android:scrollbars="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        />
+
 
 </android.support.design.widget.AppBarLayout>
 
+    <ScrollView
+            android:layout_width="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_height="wrap_content">
+    <android.support.v4.widget.NestedScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+        <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+            >
+            <TextView
+                    android:id="@+id/textView_title"
+                    android:textColor="#333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+
+
+            />
+            <TextView
+
+                    android:id="@+id/textView_published"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="50dp"
+
+
+
+            />
+                <com.uncopt.android.widget.text.justify.JustifiedTextView
+                        android:id="@+id/text_content"
+                        android:textColor="#333"
+                        android:paddingTop="80dp"
+                        android:lineHeight="2sp"
+                        android:textSize="8pt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:layout_marginStart="0dp"/>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
-</ScrollView>
+
