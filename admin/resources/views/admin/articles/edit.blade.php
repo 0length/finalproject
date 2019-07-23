@@ -44,10 +44,10 @@
                     </div>
                     </div>
                     </div>
-                    @foreach ($article as $item_article)
-<form role="form" action="/article/{{ $item_article->id }}" method="POST"  enctype="multipart/form-data">
+                    {{-- @foreach ($article as $item_article) --}}
+<form role="form" action="/article/{{ $article->id }}" method="POST"  enctype="multipart/form-data">
     {{ csrf_field() }}
-                                                    {{ method_field('post') }}
+                                                    {{ method_field('PUT') }}
     <div>
             <div class="col-md-12">
 
@@ -62,7 +62,7 @@
 
 
                     <div class="form-group m-b-10">
-                    <input name="title" value="{{ $item_article->title }}" type="text" placeholder="Title" class="form-control input-lg">
+                    <input name="title" value="{{ $article->title }}" type="text" placeholder="Title" class="form-control input-lg">
                     </div>
                     </div>
 
@@ -70,10 +70,10 @@
                             <div class="form-group form-group-default form-group-default-select2 required">
                             <label class="">Subject</label>
                             <select name="subject" class="full-width select2-hidden-accessible" data-placeholder="Select Country" data-init-plugin="select2" tabindex="-1" aria-hidden="true">
-                                @foreach ($subjects as $item_subject)  
+                                @foreach ($subjects as $item_subject)
                             <option value="{{ $item_subject->id }}">{{ $item_subject->name }}</option>
                                 @endforeach
-
+                            </select>
                             </div>
                             </div>
                             <div class="form-group">
@@ -81,15 +81,16 @@
                                     <input type="file" name="image">
                                 </div>
                             </div>
-                            <div class="col-md-12">
-                            <textarea name="content" id="summernote" class="m-t-10" role="form" maxlength="5000" value="{{ $item_article->text_content }}"></textarea>
-                                    <script type="text/javascript">
-                         $(document).ready(function() {
-                          $('textarea').summernote();
-                        });
-                                        </script>
-                        </div>
+
+
+                                <div class="col-md-12">
+                                    <textarea id="textbox" value="" name="content" class="form-control" rows="15" role="form" maxlength="5000">
+                                            {{ $article->text_content }}
+                                    </textarea>
+                                </div>
+
                         </form>
+                {{-- @endforeach --}}
     </div>
 
 

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Subject;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -65,9 +65,9 @@ class ArticleController extends Controller
 
           Article::create([
               'subject_id' => $request->input('subject'),
-              'author_id'=> Auth::user()->id,
+              'author_name'=> $request->input('author_id'),
               'title' => $request->input('title'),
-              'img_url' => "https://readme.serveo.net/images/article/".$imageName,
+              'img_url' => "images/article/".$imageName,
               'text_content' => $request->content,
               'published_at' => date('D, d M y'),
 
@@ -107,9 +107,27 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(Request $request, $id)
     {
-        //
+        request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images/article'), $imageName);
+          $article = Article::find($id);
+          $article->update([
+              'subject_id' => $request->input('subject'),
+              'author_name'=> $request->input('author_id'),
+              'title' => $request->input('title'),
+              'img_url' => "images/article/".$imageName,
+              'text_content' => $request->content,
+              'published_at' => date('D, d M y'),
+
+
+          ]);
+          return redirect('/article');
     }
 
     /**

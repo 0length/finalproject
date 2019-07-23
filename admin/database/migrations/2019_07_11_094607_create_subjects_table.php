@@ -18,6 +18,7 @@ class CreateSubjectsTable extends Migration
             $table->string('name', 20);
             $table->string('img_url', 500);
             $table->string('description', 100);
+            $table->string('index_color', 20);
             $table->timestamps();
         });
     }

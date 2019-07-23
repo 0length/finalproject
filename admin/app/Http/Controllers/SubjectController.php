@@ -47,11 +47,12 @@ class SubjectController extends Controller
 
         ]);
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
-        request()->image->move(public_path('images/subject'), $imageName);
+        request()->image->move(public_path('images/subject/'), $imageName);
           Subject::create([
               'name' => $request->input('name'),
-              'img_url' => "https://readme.serveo.net/images/subject/".$imageName,
-              'description' => "Description",
+              'img_url' => "images/subject/".$imageName,
+              'description' => $request->post('content'),
+              'index_color' => $request->input('color'),
 
 
           ]);
@@ -75,9 +76,13 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Subject $subject)
+    public function edit($id)
     {
-        //
+
+
+        $subject = Subject::find($id);
+        return view('admin.subjects.edit', compact('subject'));
+
     }
 
     /**
@@ -89,7 +94,23 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        request()->validate([
+
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('images/subject'), $imageName);
+          $subject = Subject::find($id);
+          $subject->update([
+              'name' => $request->input('name'),
+              'img_url' => "images/subject/".$imageName,
+              'description' => $request->post('content'),
+
+
+          ]);
+
+        return redirect('/article');
     }
 
     /**
@@ -98,8 +119,11 @@ class SubjectController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject)
+    public function destroy($id)
     {
-        //
+        $subject = Subject::find($id);
+          $subject->delete();
+
+        return redirect('/article');
     }
 }

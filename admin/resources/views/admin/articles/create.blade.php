@@ -50,6 +50,7 @@
                     <h5>Writte a New Post</h5>
 
                     <div class="form-group m-b-10">
+                        <input name="author_id" type="hidden" value="{{ Auth::user()->name }}">
                         <input name="title" type="text" placeholder="Title" class="form-control input-lg">
                     </div>
 

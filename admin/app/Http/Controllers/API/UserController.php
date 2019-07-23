@@ -22,11 +22,11 @@ class UserController extends Controller
     public function login(){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();
-            $success['token'] =  $user->createToken('MyApp')-> accessToken;
-            return response()->json(['success' => $success], $this-> successStatus);
+            $success =  $user->createToken('MyApp')-> accessToken;
+            return response()->json(['status' =>'success', 'token'=>$success], $this-> successStatus);
         }
         else{
-            return response()->json(['error'=>'Unauthorised'], 401);
+            return response()->json(['status'=>'failed', 'token'=>'nothing'], 401);
         }
     }
 /**
@@ -43,14 +43,14 @@ class UserController extends Controller
             'c_password' => 'required|same:password',
         ]);
 if ($validator->fails()) {
-            return response()->json(['error'=>$validator->errors()], 401);
+            return response()->json(['status'=>'error', 'token'=>'nothing'], 401);
         }
 $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
         $success['token'] =  $user->createToken('MyApp')-> accessToken;
         $success['name'] =  $user->name;
-return response()->json(['success'=>$success], $this-> successStatus);
+return response()->json(['status'=>'success', 'token'=>$success['token']], $this-> successStatus);
     }
 /**
      * details api
@@ -63,6 +63,6 @@ return response()->json(['success'=>$success], $this-> successStatus);
         return response()->json(['success' => $user], $this-> successStatus);
     }
 
- 
+
 
 }

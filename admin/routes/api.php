@@ -22,11 +22,15 @@ Route::post('details', 'API\UserController@details');
 //getList
 Route::get('articles', 'API\DataController@articles');
 Route::get('subjects', 'API\DataController@subjects');
-
-//getItembyid
-Route::get('articles/{id}', 'API\DataController@articlesid');
 Route::get('subjects/{id}', 'API\DataController@subjectsid');
+
+//getItemsbyid
+Route::get('articles/{id}', 'API\DataController@articlesid');
+
+//getItemsbykeyword
+Route::get('articles/search/{keyword}', 'API\DataController@articleskeyword');
 
 //increment
 Route::get('articles/visit/{id}', 'API\DataController@countItem');
 Route::post('articles/visit/{id}', 'API\DataController@increItem');
+

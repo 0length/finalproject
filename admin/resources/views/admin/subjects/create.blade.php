@@ -61,22 +61,37 @@
                     </div>
 
                     </div>
-
-                    <div class="col-md-12">
-                            <div class="form-group form-group-default form-group-default-select2 required"></div>
-                            </div>
-                            </div>
                             <div class="form-group">
                                     <b>File Gambar</b><br/>
                                     <input type="file" name="image">
+                            </div>
+                            <br/>
+                            <div class="col-md-12">
+                                <div class="form-group form-group-default form-group-default-select2 required">
+                                    <label class="">Index Color</label>
+                                    <select name="color" class="full-width select2-hidden-accessible" data-placeholder="Select Country" data-init-plugin="select2" tabindex="-1" aria-hidden="true">
+                                        <option value="#FFECD9">
+                                            Yellow
+                                        </option>
+                                        <option value="#ADD8E6">
+                                            Blue
+                                        </option>
+                                        <option value="#E6A8D7">
+                                            Pink
+                                        </option>
+                                        <option value="#90EE90">
+                                            Green
+                                        </option>
+                                    </select>
+
                                 </div>
                             </div>
+                            <br/>
                             <div class="col-md-12">
-                                    <textarea name="content" id="summernote" class="m-t-10" role="form" maxlength="5000"></textarea>
-                                    <script type="text/javascript">
-                         $(document).ready(function() {
-                          $('textarea').summernote();
-                        });
+                                    <textarea id="textbox" value="" name="content" class="form-control" rows="15" role="form" maxlength="5000">
+
+                                    </textarea>
+                                </div>
                                         </script>
                         </div>
                         </form>

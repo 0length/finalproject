@@ -34,6 +34,13 @@ return [
     */
 
     'connections' => [
+        'laravel-visits' => [
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 3, // anything from 1 to 15, except 0 (or what is set in default)
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
@@ -124,12 +131,6 @@ return [
             'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_').'_database_',
         ],
         [
-            'laravel-visits' => [
-                'host' => env('REDIS_HOST', '127.0.0.1'),
-                'password' => env('REDIS_PASSWORD', null),
-                'port' => env('REDIS_PORT', 6379),
-                'database' => 3, // anything from 1 to 15, except 0 (or what is set in default)
-            ],
 
         'default' => [
             'host' => env('REDIS_HOST', '127.0.0.1'),
@@ -145,6 +146,20 @@ return [
             'database' => env('REDIS_CACHE_DB', 1),
         ],
 
+        'laravel-visits' => [
+            'host' => env('REDIS_HOST', '127.0.0.1'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port' => env('REDIS_PORT', 6379),
+            'database' => 3, // anything from 1 to 15, except 0 (or what is set in default)
+        ],
+
+    ],
+
+    'laravel-visits' => [
+        'host' => env('REDIS_HOST', '127.0.0.1'),
+        'password' => env('REDIS_PASSWORD', null),
+        'port' => env('REDIS_PORT', 6379),
+        'database' => 3, // anything from 1 to 15, except 0 (or what is set in default)
     ],
 
 ],

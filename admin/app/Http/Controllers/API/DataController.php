@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Article;
+use App\Subject;
 use Illuminate\Http\Request;
 
 class DataController extends Controller
@@ -10,20 +12,40 @@ class DataController extends Controller
     public function countItem($id)
     {
         $post = Article::find($id);
-        $visitcount = $post->visits()->count();
+        $visitcount = visits($post)->count();
+
         return response()->json($visitcount);
     }
 
     public function increItem($id)
     {
         $post = Article::find($id);
-        $post->visits()->increment();
+
+        visits($post)->forceIncrement();
     }
 
     public function articlesid($id)
     {
-        $articles = Article::find($id);
-        return response()->json($articles);
+        $article = Article::find($id);
+        visits($article)->forceIncrement();
+        $value = visits($article)->count();
+        $article->update([
+            'view_count' => $value,
+        ]);
+        $updated = Article::find($id);
+
+        return response()->json($article);
+    }
+
+    public function articleskeyword($keyword)
+    {
+
+        $articles = Article::when($keyword, function ($query) use ($keyword) {
+            $query->where('title', 'like', "%{$keyword}%")
+                ->orWhere('text_content', 'like', "%{$keyword}%");
+        })->get();
+
+        return  response()->json($articles);
     }
 
     public function articles()
@@ -35,18 +57,16 @@ class DataController extends Controller
     public function subjectsid($id)
     {
 
-            $subjects = Subject::find($id);
+            $subjects = Article::where('subject_id', '=', $id)->get();
+
             return response()->json($subjects);
-
-
     }
 
     public function subjects()
     {
 
         $subjects = Subject::all();
+
         return response()->json($subjects);
-
-
     }
 }
