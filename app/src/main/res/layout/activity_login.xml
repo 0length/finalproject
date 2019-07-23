@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:gravity="center_vertical"
+              android:paddingHorizontal="25dp"
+              android:background="@drawable/background_cardview"
+              android:layout_height="match_parent">
+<pl.droidsonroids.gif.GifImageView
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+/>
+    <EditText
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Email"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_marginVertical="10dp"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="@color/white"
+            android:textColorHighlight="@color/white"
+    />
+
+    <EditText
+            android:hint="Password"
+            android:textColorHint="@color/white"
+            android:shadowColor="@color/white"
+            android:textColor="@color/white"
+            android:outlineAmbientShadowColor="@color/white"
+            android:outlineSpotShadowColor="@color/white"
+            android:layout_marginVertical="20dp"
+            android:textColorHighlight="@color/white"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorLink="@color/white"
+    />
+
+    <Button
+            android:layout_marginTop="20dp"
+            android:text="S i g n  I n"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/background_login"
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+    />
+
+    <android.support.v7.widget.LinearLayoutCompat
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+    >
+    <pl.droidsonroids.gif.GifTextView
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?"
+    />
+        <TextView
+                android:text="Sign Up"
+                android:paddingLeft="10dp"
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+        />
+    </android.support.v7.widget.LinearLayoutCompat>
+</LinearLayout>

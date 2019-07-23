@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Read Me</string>
+
+    <string name="article_id">id</string>
+    <string name="article_subject_id">subject_id</string>
+    <string name="article_title">title</string>
+    <string name="article_img_url">img_url</string>
+    <string name="article_published_at">published_at</string>
+    <string name="article_text_content">text_content</string>
+    
+    <string name="auth_token">AUTH_TOKEN</string>
+</resources>
