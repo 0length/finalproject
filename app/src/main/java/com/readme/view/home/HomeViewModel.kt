@@ -3,7 +3,6 @@ package com.readme.view.home
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MediatorLiveData
 import android.arch.lifecycle.MutableLiveData
 import com.readme.data.model.Articles
 import com.readme.data.model.Subjects

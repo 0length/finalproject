@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.madapps.liquid.LiquidRefreshLayout
@@ -15,7 +14,6 @@ import com.readme.service.api.ApiClient
 import com.readme.service.api.OnlyApi
 import com.readme.view.detail.ArticleDetailActivity
 import kotlinx.android.synthetic.main.activity_search.*
-import kotlinx.android.synthetic.main.fragment_home.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

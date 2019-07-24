@@ -30,4 +30,8 @@ class User {
     fun getEmail() : String? {
         return email
     }
+
+    fun getJoinedDate() : String? {
+        return created_at
+    }
 }

@@ -1,6 +1,5 @@
 package com.readme.service.api
 
-import com.readme.R
 import com.readme.data.model.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -40,7 +39,10 @@ interface OnlyApi {
         @Field("password") password : String
     ) : Call<Register>
 
-    @Headers("Authorization: Bearer "+R.string.auth_token)
-    @GET("/tasks")
-    fun getUserDetail(): Call<User>
+
+    @POST("details")
+    fun getUserDetail(@Header("Authorization") token : String?): Call<User>?
+
+    @GET("popular/articles")
+    fun getPopularArticle() : Call<List<Articles>>
 }

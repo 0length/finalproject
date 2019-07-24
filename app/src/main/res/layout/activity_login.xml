@@ -4,6 +4,7 @@
               android:layout_width="match_parent"
               android:gravity="center_vertical"
               android:paddingHorizontal="25dp"
+              android:id="@+id/container"
               android:background="@drawable/background_cardview"
               android:layout_height="match_parent">
 <pl.droidsonroids.gif.GifImageView

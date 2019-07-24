@@ -1,5 +1,7 @@
 package com.readme.view.profile
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
@@ -29,19 +31,22 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val onlyApi : OnlyApi = ApiClient.getClient().create(OnlyApi::class.java)
-        getUserDetail(onlyApi)
+        var preference : SharedPreferences = context!!.getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val auth_token = "Bearer "+preference.getString(R.string.auth_token.toString(), null)
+        getUserDetail(onlyApi, auth_token)
         profileLayoutRefresh.setOnRefreshListener(object : LiquidRefreshLayout.OnRefreshListener {
             override fun completeRefresh() {
 
             }
 
             override fun refreshing() {
-                getUserDetail(onlyApi)
+                getUserDetail(onlyApi, auth_token)
                 Handler().postDelayed({
                     refreshLayout.finishRefreshing()
                 }, 5000)
@@ -51,17 +56,19 @@ class ProfileFragment : Fragment() {
     }
 
 
-    private fun getUserDetail(onlyApi: OnlyApi) {
-        val call : Call<User> = onlyApi.getUserDetail()
-        call.enqueue(object : Callback<User> {
+    private fun getUserDetail(onlyApi: OnlyApi, auth_token : String? ) {
+        val call : Call<User>? = onlyApi.getUserDetail(auth_token)
+        call?.enqueue(object : Callback<User> {
             override fun onFailure(call: Call<User>?, t: Throwable?) {
-                Toast.makeText(context, "Please check your internet connection", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "Please check your internet connection"+auth_token, Toast.LENGTH_LONG).show()
             }
 
             override fun onResponse(call: Call<User>?, response: Response<User>?) {
                 user = response?.body()!!
                 Log.d("TAG", "user size ${user}")
-                email.text = user.getEmail()
+                name.text = user?.getName()
+                email.text = user?.getEmail()
+                joined_date.text = user?.getJoinedDate()
 
 
             }

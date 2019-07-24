@@ -1,4 +1,4 @@
-package com.readme.view.bysubject
+package com.readme.view.tranding
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -11,14 +11,13 @@ import com.readme.service.api.BaseUrl
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.articles_layout_list_item.view.*
 
-class BySubjectAdapter(
+class TrandingAdapter (
     private val articles : List<Articles>,
-    private val clickListener: OnItemClickListener
-) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+    private val clickTrandingArticleListener: onItemClickTrandingArticle
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
-    interface OnItemClickListener{
-        fun onItemClickBySubject(articles: Articles, itemView : View)
+    interface onItemClickTrandingArticle{
+        fun onItemClickTrandingArticle(articles: Articles, itemView : View)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -32,24 +31,21 @@ class BySubjectAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as ViewHolder).bind(articles[position], clickListener)
+        (holder as ViewHolder).bind(articles[position], clickTrandingArticleListener)
         Picasso.get().load(BaseUrl.baseUrl+articles.get(position).getImageUrl()).into(holder.poster)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         var poster: ImageView = itemView.findViewById(R.id.mvPoster)
 
-        fun bind(articles: Articles, listener: OnItemClickListener) = with(itemView) {
+        fun bind(articles: Articles, listener: onItemClickTrandingArticle) = with(itemView) {
             txtATitle.text = articles.getTitle().toString()
             txtADate.text = articles.getPublishedAt().toString()
             visitCount.text = articles.getViewCount().toString()
 
             setOnClickListener {
-                listener.onItemClickBySubject(articles, it)
+                listener.onItemClickTrandingArticle(articles, it)
             }
         }
     }
-
-
-
 }

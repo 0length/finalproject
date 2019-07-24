@@ -38,7 +38,7 @@
                     android:paddingTop="10dp"
                     app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                     tools:listitem="@layout/articles_layout_list_item"
-                    android:id="@+id/rcViewSubject"
+                    android:id="@+id/rcViewTranding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
             />

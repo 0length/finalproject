@@ -141,7 +141,7 @@ public class SpaceTabLayout extends RelativeLayout {
         tabLayout = (TabLayout) findViewById(R.id.spaceTab);
 
         defaultTabOneButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_home);
-        defaultTabTwoButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_bookmark);
+        defaultTabTwoButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tranding);
         defaultTabThreeButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_profile);
         defaultTabFourButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_four);
         defaultTabFiveButtonIcon = getContext().getResources().getDrawable(R.drawable.ic_tab_five);

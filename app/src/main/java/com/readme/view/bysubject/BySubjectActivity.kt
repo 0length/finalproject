@@ -12,7 +12,6 @@ import com.readme.service.api.ApiClient
 import com.readme.service.api.OnlyApi
 import com.readme.view.detail.ArticleDetailActivity
 import kotlinx.android.synthetic.main.activity_by_subject.*
-import kotlinx.android.synthetic.main.activity_detail_article.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
