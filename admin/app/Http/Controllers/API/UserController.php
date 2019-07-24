@@ -60,7 +60,7 @@ return response()->json(['status'=>'success', 'token'=>$success['token']], $this
     public function details()
     {
         $user = Auth::user();
-        return response()->json(['success' => $user], $this-> successStatus);
+        return response()->json($user, $this-> successStatus);
     }
 
 

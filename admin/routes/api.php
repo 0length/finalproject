@@ -34,3 +34,6 @@ Route::get('articles/search/{keyword}', 'API\DataController@articleskeyword');
 Route::get('articles/visit/{id}', 'API\DataController@countItem');
 Route::post('articles/visit/{id}', 'API\DataController@increItem');
 
+//bytranding
+Route::get('popular/articles/', 'API\DataController@popular');
+

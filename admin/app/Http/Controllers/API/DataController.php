@@ -9,19 +9,26 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
-    public function countItem($id)
+    // public function countItem($id)
+    // {
+    //     $post = Article::find($id);
+    //     $visitcount = visits($post)->count();
+
+    //     return response()->json($visitcount);
+    // }
+
+    // public function increItem($id)
+    // {
+    //     $post = Article::find($id);
+
+    //     visits($post)->forceIncrement();
+    // }
+
+    public function popular()
     {
-        $post = Article::find($id);
-        $visitcount = visits($post)->count();
-
-        return response()->json($visitcount);
-    }
-
-    public function increItem($id)
-    {
-        $post = Article::find($id);
-
-        visits($post)->forceIncrement();
+        $popu = Article::all();
+       $trand =  $popu->sortByDesc('view_count');
+        return response()->json($trand);
     }
 
     public function articlesid($id)
@@ -69,4 +76,5 @@ class DataController extends Controller
 
         return response()->json($subjects);
     }
+
 }

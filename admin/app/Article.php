@@ -18,8 +18,8 @@ class Article extends Model
     return $this->hasOne('App\Subject', 'id', 'subject_id');
     }
 
-    public function visits()
-    {
-        return visits($this);
-    }
+    // public function visits()
+    // {
+    //     return visits($this);
+    // }
 }
