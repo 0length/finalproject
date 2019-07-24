@@ -27,8 +27,14 @@ class DataController extends Controller
     public function popular()
     {
         $popu = Article::all();
-       $trand =  $popu->sortByDesc('view_count');
-        return response()->json($trand);
+        $trand =  $popu->sortByDesc('view_count');
+        foreach($trand as $trands){
+
+          $a =    response()->json($trands);
+         $b =  json_decode($a);
+          return $a;
+        }
+        //  return response()->json($trand);
     }
 
     public function articlesid($id)
