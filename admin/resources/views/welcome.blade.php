@@ -29,7 +29,7 @@
 <nav class="navbar navbar-expand-lg navbar-light">
 <div class="container">
 
-<a class="navbar-brand logo_h" href="index-2.html"><img src="landing-assets/img/logo.png" alt=""></a>
+<a class="navbar-brand logo_h" href="/"><img src="landing-assets/img/logo.png" alt=""></a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
@@ -38,25 +38,25 @@
 
 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 <ul class="nav navbar-nav menu_nav ml-auto">
-<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#feature">FEATURES</a></li>
-<li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
+<li class="nav-item active"><a class="nav-link" href="#home">Branda</a></li>
+<li class="nav-item"><a class="nav-link" href="#feature">Fitur</a></li>
+<li class="nav-item"><a class="nav-link" href="#video">Video</a>
 <li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
-<li class="nav-item"><a class="nav-link" href="#screen">SCREENS</a>
+<li class="nav-item"><a class="nav-link" href="#screen">Screen</a>
 <li class="nav-item submenu dropdown">
 <a href="#testi" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Testimony</a>
 {{-- <ul class="dropdown-menu">
 <li class="nav-item"><a class="nav-link" href="#">Elements</a></li>
 </ul> --}}
 </li>
-<li class="nav-item submenu dropdown">
+<!-- <li class="nav-item submenu dropdown">
 <a href="#download" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Download</a>
 <ul class="dropdown-menu">
 <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
 <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
 </ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="/article">Login as Writter</a></li>
+</li> -->
+<li class="nav-item"><a class="nav-link" href="/article">Mulailah Menulis</a></li>
 </ul>
 </div>
 </div>
@@ -66,12 +66,13 @@
 
 
 <section class="home_banner_area" id="home">
+<div id="particles-js"></div>
 <div class="banner_inner">
 <div class="container">
 <div class="row banner_content">
 <div class="col-lg-9">
-<h2>The Best App <br />in the Universe</h2>
-<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
+<h2>Aplikasi Android <br />Berbasis API yang Stabil</h2>
+<p>Berisi Artikel pilihan dan menarik. Memuaskan pembaca.</p>
 <a class="banner_btn" href="#">Explore Now</a>
 </div>
 <div class="col-lg-3">
@@ -88,36 +89,36 @@
 <section class="feature_area p_120" id="feature">
 <div class="container">
 <div class="main_title">
-<h2>Unique Features</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<h2>General Feature</h2>
+<p>Fittur yang umum yang menguntungkan Pembaca.</p>
 </div>
 <div class="feature_inner row">
 <div class="col-lg-3 col-md-6">
 <div class="feature_item">
 <img src="landing-assets/img/icon/f-icon-1.png" alt="">
-<h4>Maintenance</h4>
-<p>inappropriate behavior is often laughed off as boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+<h4>Authentication</h4>
+<p>Sebelum mulai membaca pengguna di minta masuk atau mendaftar dengan akunya.</p>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
 <div class="feature_item">
 <img src="landing-assets/img/icon/f-icon-1.png" alt="">
-<h4>Maintenance</h4>
-<p>inappropriate behavior is often laughed off as boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+<h4>Popular Post</h4>
+<p>Setiap artikel terlihat berapa jumlah kunjungan selmama atikel di publikasi. Artikel yang tampil paling atas adalah artikel dengan jumlah pengunjung terbanyak.</p>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
 <div class="feature_item">
 <img src="landing-assets/img/icon/f-icon-1.png" alt="">
-<h4>Maintenance</h4>
-<p>inappropriate behavior is often laughed off as boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+<h4>Real Time Search</h4>
+<p>Di setiap ada perubahan kata atau keyword pada papan pencari. Sistem langsung mendeteksinya dan mencari nya dalam database walau pengguna belum memencet tombol cari.</p>
 </div>
 </div>
 <div class="col-lg-3 col-md-6">
 <div class="feature_item">
 <img src="landing-assets/img/icon/f-icon-1.png" alt="">
-<h4>Maintenance</h4>
-<p>inappropriate behavior is often laughed off as boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.</p>
+<h4>Category</h4>
+<p>Mengelompokan Artikel berdasarkan Subjek akan memudahkan pengguna dalam mencari dan menentukan artikel artikel yang akan di baca sesai keinginannya</p>
 </div>
 </div>
 </div>
@@ -133,9 +134,9 @@
 </div>
 <div class="col-lg-5 offset-lg-1">
 <div class="interior_text">
-<h4>We Believe that Interior beautifies the Total Architecture</h4>
-<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed off.</p>
-<a class="main_btn" href="#">See Details</a>
+<h4>Stabil dan Ringan</h4>
+<p>Keseriusan dalam pengembangan membuat Aplikasi ini menjadi stabil dan tidak jadul.</p>
+<a class="main_btn" href="#download">Download Segera</a>
 </div>
 </div>
 </div>
@@ -148,9 +149,9 @@
 <div class="interior_inner row">
 <div class="col-lg-5 offset-lg-1">
 <div class="interior_text">
-<h4>We Believe that Interior beautifies the Total Architecture</h4>
-<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed off.</p>
-<a class="main_btn" href="#">See Details</a>
+<h4>Lingkungan dan Tampilan yang menarik dan mendunia </h4>
+<p>Saya membuat nya sesimple mungkin dan semenarik mungkin agar pengguna tidak kesulitan dalam menggunakan.</p>
+<a class="main_btn" href="#download">Download Segera</a>
 </div>
 </div>
 <div class="col-lg-6">
@@ -171,31 +172,31 @@
 <div class="container">
 <div class="main_title">
 <h2>Account Type</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Sebenarnya akan di bedakan Menjadi Tiga Akun. Namun sekarang ini baru dua tipe akun ya itu akun pembaca dan semua akun bisa menjadi keduanya.</p>
 </div>
 <div class="price_item_inner row">
 <div class="col-lg-4">
 <div class="price_item">
 <div class="price_head">
 <div class="float-left">
-<h3>Standard</h3>
-<p>For the individuals</p>
+<h3>Pembaca</h3>
+<p>Untuk Pengguna yang Mendownload Aplikasinya</p>
 </div>
 <div class="float-right">
-<h2>£199</h2>
+<!-- <h2>£199</h2> -->
 </div>
 </div>
 <div class="price_body">
 <ul class="list">
-<li><a href="#">2.5 GB Free Photos</a></li>
-<li><a href="#">Secure Online Transfer Indeed</a></li>
-<li><a href="#">Unlimited Styles for interface</a></li>
-<li><a href="#">Reliable Customer Service</a></li>
-<li><a href="#">Manual Backup Provided</a></li>
+<li><a href="#">Membaca Artikel</a></li>
+<li><a href="#">Mencari Article berdasarkan Keyword</a></li>
+<li><a href="#">Meningkatkan Jumlah Kunjungan pada Setiap Artikel</a></li>
+<li><a href="#">Memilih Subjek Artikel sesaui keinginan</a></li>
+<li><a href="#">Gratis</a></li>
 </ul>
 </div>
 <div class="price_footer">
-<a class="main_btn2" href="#">Purchase Plan</a>
+<a class="main_btn2" href="#download">Gunakan Aplikasi</a>
 </div>
 </div>
 </div>
@@ -203,24 +204,24 @@
 <div class="price_item">
 <div class="price_head">
 <div class="float-left">
-<h3>Standard</h3>
-<p>For the individuals</p>
+<h3>Penulis</h3>
+<p>Untuk pengguna yang ingin membagikan tulisannya</p>
 </div>
 <div class="float-right">
-<h2>£199</h2>
+<!-- <h2>£199</h2> -->
 </div>
 </div>
 <div class="price_body">
 <ul class="list">
-<li><a href="#">2.5 GB Free Photos</a></li>
-<li><a href="#">Secure Online Transfer Indeed</a></li>
-<li><a href="#">Unlimited Styles for interface</a></li>
-<li><a href="#">Reliable Customer Service</a></li>
-<li><a href="#">Manual Backup Provided</a></li>
+<li><a href="#">Menulis Artikel</a></li>
+<li><a href="#">Menentukan Subjek dari Artikelnya</a></li>
+<li><a href="#">Menambahkan Subjek Baru</a></li>
+<li><a href="#">Menambahkan Gambar Pada Artikel</a></li>
+<li><a href="#">Menambahkan Icon pada Subjek</a></li>
 </ul>
 </div>
 <div class="price_footer">
-<a class="main_btn2" href="#">Purchase Plan</a>
+<a class="main_btn2" href="/article">Gunakan Aplikasi</a>
 </div>
 </div>
 </div>
@@ -228,24 +229,24 @@
 <div class="price_item">
 <div class="price_head">
 <div class="float-left">
-<h3>Standard</h3>
-<p>For the individuals</p>
+<h3>Penggambar</h3>
+<p>Untuk pendesain atau penggambar yang berniat membuatkan Gambar atau Animasi untuk Artikel</p>
 </div>
 <div class="float-right">
-<h2>£199</h2>
+<!-- <h2>£199</h2> -->
 </div>
 </div>
 <div class="price_body">
 <ul class="list">
-<li><a href="#">2.5 GB Free Photos</a></li>
-<li><a href="#">Secure Online Transfer Indeed</a></li>
-<li><a href="#">Unlimited Styles for interface</a></li>
-<li><a href="#">Reliable Customer Service</a></li>
-<li><a href="#">Manual Backup Provided</a></li>
+<li><a href="#">Membuat Ilustrasi Terkait Artikel</a></li>
+<li><a href="#">Membuat Icon Terkait Subjek</a></li>
+<li><a href="#">Membuat Animasi Terkait Artikel</a></li>
+<!-- <li><a href="#"></a></li>
+<li><a href="#">Manual Backup Provided</a></li> -->
 </ul>
 </div>
 <div class="price_footer">
-<a class="main_btn2" href="#">Purchase Plan</a>
+<a class="main_btn2" href="#">Akan Segera Hadir</a>
 </div>
 </div>
 </div>
@@ -321,10 +322,10 @@
 <section class="download_app_area p_120" id="download">
 <div class="container">
 <div class="app_inner">
-<h2>Download This App Today!</h2>
-<p>It won’t be a bigger problem to find one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great heights so far as its popularity and technological advancement are concerned.</p>
+<h2>Download Aplikasinya Sekarang!</h2>
+<p>Sementara Hanya Tersedia Di Android OS.</p>
 <div class="app_btn_area">
-<div class="app_btn">
+<!-- <div class="app_btn">
 <div class="media">
 <div class="d-flex">
 <i class="fa fa-apple" aria-hidden="true"></i>
@@ -334,7 +335,7 @@
 <p>on App Store</p>
 </div>
 </div>
-</div>
+</div> -->
 <div class="app_btn">
 <div class="media">
 <div class="d-flex">
@@ -355,7 +356,7 @@
 <section class="latest_news_area p_120">
 <div class="container">
 <div class="main_title">
-<h2>Latest News</h2>
+<h2>Berita Terkini</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 </div>
 <div class="latest_news_inner row">
@@ -405,12 +406,12 @@
 <div class="row">
 <div class="col-lg-3  col-md-6 col-sm-6">
 <div class="single-footer-widget tp_widgets">
-<h6 class="footer_title">Top Products</h6>
+<h6 class="footer_title">Top Service</h6>
 <ul class="list">
-<li><a href="#">Managed Website</a></li>
-<li><a href="#">Manage Reputation</a></li>
-<li><a href="#">Power Tools</a></li>
-<li><a href="#">Marketing Service</a></li>
+<li><a href="#">Make Website</a></li>
+<li><a href="#">Make Mobile App</a></li>
+<li><a href="#">Design</a></li>
+<li><a href="#">Network Setting</a></li>
 </ul>
 </div>
 </div>
@@ -450,17 +451,18 @@
 Copyright &copy;<script type="d7b343ab8f1393d2c1d60948-text/javascript">document.write(new Date().getFullYear());</script> All rights reserved.
 </p>
 <div class="col-lg-4 col-md-4 footer-social">
-<a href="#"><i class="fa fa-facebook"></i></a>
-<a href="#"><i class="fa fa-twitter"></i></a>
-<a href="#"><i class="fa fa-dribbble"></i></a>
-<a href="#"><i class="fa fa-behance"></i></a>
+<a href="https://facebook.com/0length"><i class="fa fa-facebook"></i></a>
+<a href="https://github.com/0length"><i class="fa fa-github"></i></a>
+<a href="https://instagram.com/0length"><i class="fa fa-instagram"></i></a>
+<a href="mailto:fajarjunyor13@gmail.com"><i class="fa fa-google"></i></a>
 </div>
 </div>
 </div>
 </footer>
 
-
-
+<script src="landing-assets/js/particle.js" type="d7b343ab8f1393d2c1d60948-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
 <script src="landing-assets/js/jquery-3.2.1.min.js" type="d7b343ab8f1393d2c1d60948-text/javascript"></script>
 <script src="landing-assets/js/popper.js" type="d7b343ab8f1393d2c1d60948-text/javascript"></script>
 <script src="landing-assets/js/bootstrap.min.js" type="d7b343ab8f1393d2c1d60948-text/javascript"></script>
