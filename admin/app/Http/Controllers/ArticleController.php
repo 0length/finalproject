@@ -24,13 +24,6 @@ class ArticleController extends Controller
         $articles = Article::all();
         $subjects = Subject::all();
 
-        // foreach ($articles as $key) {
-        // $id =  $key->subject_id;
-        // $subjects_name = Subject::find($id);
-
-        //     }
-
-
         return view('admin.articles.index', compact('articles', 'subjects'));
     }
 
