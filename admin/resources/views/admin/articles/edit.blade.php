@@ -17,6 +17,7 @@
 <link href="{{ asset('/assets/plugins/summernote/css/summernote.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ asset('/assets/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" media="screen">
 <link href="{{ asset('/assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css" media="screen">
+<link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
 <link href="{{ asset('/pages/css/pages-icons.css') }}" rel="stylesheet" type="text/css">
 <link class="main-stylesheet" href="{{ asset('/pages/css/pages.css') }}" rel="stylesheet" type="text/css" />
 
@@ -78,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                     <b>File Gambar</b><br/>
-                                    <input type="file" name="image">
+                                    <input type="file" name="image" class="filepond">
                                 </div>
                             </div>
 
@@ -101,6 +102,12 @@
 @endsection
 
 @section('script')
+<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
+
+<!-- Turn all file input elements into ponds -->
+<script>
+FilePond.parse(document.body);
+</script>
 <script src="{{ asset('/assets/plugins/jquery/jquery-3.2.1.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/assets/plugins/modernizr.custom.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/assets/plugins/jquery-ui/jquery-ui.min.js') }}" type="text/javascript"></script>
