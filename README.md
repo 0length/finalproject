@@ -6,7 +6,7 @@ cd admin
 composer install
  copy .env.example to .env
  php artisan key:generate
- configure .env
+ configure .env (mysql and redis)
  php artisan migrate
  composer dump-autoload
  php artisan migrate fresh
