@@ -2,11 +2,13 @@ package com.readme.view.tranding
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.madapps.liquid.LiquidRefreshLayout
 import com.readme.R
 import com.readme.data.model.Articles
 import com.readme.service.api.ApiClient
@@ -30,6 +32,21 @@ class TrandingFragment : Fragment(), TrandingAdapter.onItemClickTrandingArticle 
         super.onViewCreated(view, savedInstanceState)
         val onlyApi : OnlyApi = ApiClient.getClient().create(OnlyApi::class.java)
         getPopularArticle(onlyApi)
+
+        refreshLayoutTranding.setOnRefreshListener(object : LiquidRefreshLayout.OnRefreshListener {
+            override fun completeRefresh() {
+
+            }
+
+            override fun refreshing() {
+                getPopularArticle(onlyApi)
+                Handler().postDelayed({
+                    refreshLayoutTranding.finishRefreshing()
+                }, 5000)
+
+            }
+        })
+
     }
 
     private fun getPopularArticle(onlyApi : OnlyApi) {
@@ -49,6 +66,9 @@ class TrandingFragment : Fragment(), TrandingAdapter.onItemClickTrandingArticle 
 
         })
     }
+
+
+
     private fun populateArticleList(articles: List<Articles>) {
         rcViewTranding.adapter = TrandingAdapter(articles, this)
     }
