@@ -19,6 +19,7 @@
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:hint="Email"
+            android:inputType="textEmailAddress"
             android:outlineAmbientShadowColor="@color/white"
             android:outlineSpotShadowColor="@color/white"
             android:layout_marginVertical="10dp"
@@ -31,6 +32,7 @@
 
     <EditText
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColorHint="@color/white"
             android:shadowColor="@color/white"
             android:textColor="@color/white"
