@@ -9,32 +9,14 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
-    // public function countItem($id)
-    // {
-    //     $post = Article::find($id);
-    //     $visitcount = visits($post)->count();
 
-    //     return response()->json($visitcount);
-    // }
-
-    // public function increItem($id)
-    // {
-    //     $post = Article::find($id);
-
-    //     visits($post)->forceIncrement();
-    // }
 
     public function popular()
     {
         $popu = Article::all();
-        $trand =  $popu->sortByDesc('view_count');
-        foreach($trand as $trands){
+        $trand =  $popu->sortByDesc('view_count')->values()->all();
 
-          $a =    response()->json($trands);
-         $b =  json_decode($a);
-          return $a;
-        }
-        //  return response()->json($trand);
+             return response()->json($trand);
     }
 
     public function articlesid($id)

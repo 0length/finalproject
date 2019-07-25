@@ -21,9 +21,6 @@
 </span>
 </button>
 <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
-{{-- <a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
-<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
-<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a> --}}
 <a href="#" class="clearfix bg-master-lighter dropdown-item">
     <a class="dropdown-item" href="{{ route('logout') }}"
     onclick="event.preventDefault();
