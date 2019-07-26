@@ -11,7 +11,7 @@ composer install |
  composer dump-autoload | 
  php artisan db:seed | 
  edit base url to laravel host on the android project | 
- install the app on your mobile phone | 
+ | build the apk| install the app on our mobile phone | 
  connect to the same network | 
  enjoy the api based app
  
