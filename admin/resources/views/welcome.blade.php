@@ -73,11 +73,11 @@
 <div class="col-lg-9">
 <h2>Aplikasi Android <br />Berbasis API yang Stabil</h2>
 <p>Berisi Artikel pilihan dan menarik. Memuaskan pembaca.</p>
-<a class="banner_btn" href="#">Explore Now</a>
+<a class="banner_btn" href="#download">Explore Now</a>
 </div>
 <div class="col-lg-3">
 <div class="banner_map_img">
-<img class="img-fluid" src="landing-assets/img/banner/right-mobile.png" alt="">
+<img class="img-fluid" src="landing-assets/img/banner/right-mobile1.png" alt="">
 </div>
 </div>
 </div>
@@ -263,16 +263,25 @@
 </div>
 <div class="screenshot_inner owl-carousel">
 <div class="item">
-<img src="landing-assets/img/feature/feature-1.jpg" alt="">
+<img src="landing-assets/img/feature/1.jpeg" alt="">
 </div>
 <div class="item">
-<img src="landing-assets/img/feature/feature-2.jpg" alt="">
+<img src="landing-assets/img/feature/2.jpeg" alt="">
 </div>
 <div class="item">
-<img src="landing-assets/img/feature/feature-3.jpg" alt="">
+<img src="landing-assets/img/feature/3.jpeg" alt="">
 </div>
 <div class="item">
-<img src="landing-assets/img/feature/feature-4.jpg" alt="">
+<img src="landing-assets/img/feature/4.jpeg" alt="">
+</div>
+<div class="item">
+    <img src="landing-assets/img/feature/5.jpeg" alt="">
+    </div>
+    <div class="item">
+        <img src="landing-assets/img/feature/7.jpeg" alt="">
+        </div>
+<div class="item">
+    <img src="landing-assets/img/feature/8.jpeg" alt="">
 </div>
 </div>
 </div>
@@ -342,7 +351,7 @@
 <i class="fa fa-android" aria-hidden="true"></i>
 </div>
 <div class="media-body">
-<a href="#"><h4>Available</h4></a>
+<a href="/cdn/app-debug.apk"><h4>Available</h4></a>
 <p>on App Store</p>
 </div>
 </div>
