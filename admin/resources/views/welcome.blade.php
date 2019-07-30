@@ -351,7 +351,7 @@
 <i class="fa fa-android" aria-hidden="true"></i>
 </div>
 <div class="media-body">
-<a href="/cdn/app-debug.apk"><h4>Available</h4></a>
+<a href="https://drive.google.com/file/d/1HRB1QlhWdwbytZc3Ap_X59RLgxqHxQkE/view?usp=sharing"><h4>Available</h4></a>
 <p>on App Store</p>
 </div>
 </div>
