@@ -22,10 +22,10 @@ class DataController extends Controller
     public function articlesid($id)
     {
         $article = Article::find($id);
-        visits($article)->forceIncrement();
-        $value = visits($article)->count();
+        // visits($article)->forceIncrement();
+        // $value = visits($article)->count();
         $article->update([
-            'view_count' => $value,
+            'view_count' => $article->view_count + 1,
         ]);
         $updated = Article::find($id);
 
