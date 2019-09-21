@@ -1,4 +1,4 @@
-
+the revisioned andoid is on github.com/0length/revi
 
 after git clone 
 
@@ -14,4 +14,5 @@ composer install |
  | build the apk| install the app on our mobile phone | 
  connect to the same network | 
  enjoy the api based app
+ 
  
